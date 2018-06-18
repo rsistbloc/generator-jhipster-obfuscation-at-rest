@@ -1,0 +1,10 @@
+{
+  "generator-jhipster-module": {
+    "promptValues": {
+      "githubName": "rsistbloc",
+      "authorName": "rsistbloc",
+      "authorEmail": "qetasusepivall@outlook.it",
+      "authorUrl": ""
+    }
+  }
+}
