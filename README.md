@@ -44,6 +44,30 @@ npm update -g generator-jhipster-obfuscation-at-rest
 
 # Usage
 
+To run the module on a JHipster generated application:
+```bash
+yo jhipster-obfuscation-at-rest
+```
+
+The module will prompting about obfuscation during the JHipster generation entity
+```bash
+jhipster entity YourEntity
+```
+After, the entity generation will start the *post run module hooks*.
+Suppose that *YourEntity* will have two String fields name and code:
+```bash
+Running post run module hooks
+
+Running JHipster obfuscation-at-rest Generator! v0.1.0
+        Supported types ["String"]
+
+? Do you want to enable the obfuscation for this entity(EntityExample)? Yes
+? Which fields do you want to obfuscate?
+ ( ) Name
+>(*) Code
+```
+You can select all the fields (if is supported type) to apply the obfuscation.
+
 # License
 
 Apache-2.0 ©
