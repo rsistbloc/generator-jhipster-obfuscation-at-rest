@@ -6,6 +6,12 @@
 
 This is a [JHipster](http://jhipster.github.io/) module, that is meant to be used in a JHipster application.
 
+If you need to obfuscate the data before to store it then you are looking for this jhipster module!
+
+When secret or sensitive data are stored on a database in clear text unauthorized people can potentially look at them and use this information inappropriately. You can obfuscate the fields of your entity usign this jhipster module
+
+*This filed obfuscation is applicable only with JPA as persistence layer*
+
 # Prerequisites
 
 As this is a [JHipster](http://jhipster.github.io/) module, we expect you have JHipster and its related tools already installed:
