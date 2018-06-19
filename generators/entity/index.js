@@ -3,7 +3,7 @@ const packagejs = require('../../package.json');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 
-const allowedObfuscationTypes = ['String', 'LocalDate'];
+const allowedObfuscationTypes = ['String'];
 const obfuscationConverterTemplate = '<type>Obfuscation';
 
 module.exports = class extends BaseGenerator {
@@ -23,7 +23,8 @@ module.exports = class extends BaseGenerator {
                 }
             },
             displayLogo() {
-                this.log(chalk.white(`Running ${chalk.bold('JHipster obfuscation-at-rest')} Generator! ${chalk.yellow(`v${packagejs.version}\n`)}`));
+                this.log(chalk.white(`Running ${chalk.bold('JHipster obfuscation-at-rest')} Generator! ${chalk.yellow(`v${packagejs.version}`)}`));
+                this.log(chalk.white(`        Supported types ${JSON.stringify(allowedObfuscationTypes)}\n`));
             },
             validate() {
                 // this shouldn't be run directly
@@ -118,7 +119,7 @@ module.exports = class extends BaseGenerator {
                         * - field[1] is the field name
                         * - (private ${field[0]} ${field[1]};) is the marker we use to know where to insert the new @Convert tag.
                         */
-                        this.replaceContent(entityPath, `(@javax.persistence.Convert\\(.*\\))?(\\s*)(private ${field[0]} ${field[1]};)`, `$2@javax.persistence.Convert(converter = ${converter}.class)$2$3`, true);
+                        this.replaceContent(entityPath, `(@Convert\\(.*\\))?(\\s*)(private ${field[0]} ${field[1]};)`, `$2@Convert(converter = ${converter}.class)$2$3`, true);
 
                     });
                 }
