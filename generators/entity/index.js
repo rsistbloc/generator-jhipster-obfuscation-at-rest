@@ -18,8 +18,8 @@ module.exports = class extends BaseGenerator {
             },
             checkDBType() {
                 if (this.jhipsterAppConfig.databaseType !== 'sql') {
-                  // exit if DB type is not SQL
-                  this.env.error(`${chalk.red.bold('ERROR!')} This sub generator should be used only with SQL db type...\n`);
+                    // exit if DB type is not SQL
+                    this.env.error(`${chalk.red.bold('ERROR!')} This sub generator should be used only with SQL db type...\n`);
                 }
             },
             displayLogo() {
@@ -40,7 +40,7 @@ module.exports = class extends BaseGenerator {
         const entityName = this.entityConfig.entityClass;
         const opts = [];
 
-        this.entityConfig.fields.forEach(function(element) {
+        this.entityConfig.fields.forEach((element) => {
             if (allowedObfuscationTypes.includes(element.fieldType)) {
                 opts.push({
                     name: `${element.fieldNameHumanized}`,
@@ -99,12 +99,12 @@ module.exports = class extends BaseGenerator {
 
                 this.log('\n--- entityName ---');
                 this.log(`\nentityName=${entityName}`);
-                
+
                 this.log('------\n');
-                
-                if (this.props.fieldsToObfuscate && this.props.fieldsToObfuscate.length > 0){
+
+                if (this.props.fieldsToObfuscate && this.props.fieldsToObfuscate.length > 0) {
                     const entityPath = `${javaDir}domain/${this.entityConfig.entityClass}.java`;
-                    this.props.fieldsToObfuscate.forEach( (element) => {
+                    this.props.fieldsToObfuscate.forEach((element) => {
                         // split the element by before pattern used '%%%'
                         const field = element.split('%%%');
 
@@ -120,7 +120,6 @@ module.exports = class extends BaseGenerator {
                         * - (private ${field[0]} ${field[1]};) is the marker we use to know where to insert the new @Convert tag.
                         */
                         this.replaceContent(entityPath, `(@Convert\\(.*\\))?(\\s*)(private ${field[0]} ${field[1]};)`, `$2@Convert(converter = ${converter}.class)$2$3`, true);
-
                     });
                 }
             },
@@ -147,8 +146,9 @@ module.exports = class extends BaseGenerator {
 
     end() {
         if (this.props.fieldsToObfuscate) {
-            var fields='', i=1;
-            this.props.fieldsToObfuscate.forEach( (element) => {
+            let fields = '';
+            let i = 1;
+            this.props.fieldsToObfuscate.forEach((element) => {
                 const field = element.split('%%%');
                 fields += `\n       #${i++} - ${field[1]} `;
             });

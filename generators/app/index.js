@@ -1,7 +1,6 @@
 const chalk = require('chalk');
 const packagejs = require('../../package.json');
 const semver = require('semver');
-const fs = require('fs');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 
@@ -29,7 +28,7 @@ module.exports = class extends BaseGenerator {
             },
             checkDBType() {
                 if (this.jhipsterAppConfig.databaseType !== 'sql') {
-                  this.env.error(`${chalk.red.bold('ERROR!')} I support only SQL databases...\n`);
+                    this.env.error(`${chalk.red.bold('ERROR!')} I support only SQL databases...\n`);
                 }
             },
             checkJhipster() {
@@ -69,11 +68,10 @@ module.exports = class extends BaseGenerator {
         const resourceDir = jhipsterConstants.SERVER_MAIN_RES_DIR;
         const webappDir = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 
-        this.template(`${javaTemplateDir}/config/obfuscation/_StringObfuscation.java`,
-            `${javaDir}config/obfuscation/StringObfuscation.java`);
+        this.template(`${javaTemplateDir}/config/obfuscation/_StringObfuscation.java`, `${javaDir}config/obfuscation/StringObfuscation.java`);
+        // this.template(`${javaTemplateDir}/config/obfuscation/_LocalDateObfuscation.java`, `${javaDir}config/obfuscation/LocalDateObfuscation.java`);
 
-        // add required third party dependencies
-        /*
+        /* // add required third party dependencies
         if (this.buildTool === 'maven') {
             if (this.databaseType === 'mongodb') {
               this.addMavenDependency('org.javers', 'javers-spring-boot-starter-mongo', '3.5.0', '<scope>compile</scope>');
@@ -88,7 +86,7 @@ module.exports = class extends BaseGenerator {
             } else if (this.databaseType === 'sql') {
               this.addGradleDependency('compile', 'org.javers', 'javers-spring-boot-starter-sql', '3.5.0');
             }
-        }*/
+        } */
 
         // show all variables
         this.log('\n--- some config read from config ---');
@@ -118,7 +116,7 @@ module.exports = class extends BaseGenerator {
     }
 
     install() {
-        let logMsg =
+        const logMsg =
             `To install your dependencies manually, run: ${chalk.yellow.bold(`${this.clientPackageManager} install`)}`;
 
         const injectDependenciesAndConstants = (err) => {
