@@ -150,7 +150,7 @@ module.exports = class extends BaseGenerator {
             var fields='', i=1;
             this.props.fieldsToObfuscate.forEach( (element) => {
                 const field = element.split('%%%');
-                fields += `\n       #${i} - ${field[1]} `;
+                fields += `\n       #${i++} - ${field[1]} `;
             });
             this.log(`\n${chalk.bold.green('Obfuscation enabled on field: ')}${fields}`);
         }
