@@ -65,7 +65,7 @@ Suppose that *YourEntity* will have two String fields name and code:
 Running post run module hooks
 
 Running JHipster obfuscation-at-rest Generator! v0.1.0
-        Supported types ["String"]
+        Supported types ["String",LocalDate]
 
 ? Do you want to enable the obfuscation for this entity(EntityExample)? Yes
 ? Which fields do you want to obfuscate?

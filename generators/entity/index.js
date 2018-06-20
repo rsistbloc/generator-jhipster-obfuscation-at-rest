@@ -3,7 +3,7 @@ const packagejs = require('../../package.json');
 const BaseGenerator = require('generator-jhipster/generators/generator-base');
 const jhipsterConstants = require('generator-jhipster/generators/generator-constants');
 
-const allowedObfuscationTypes = ['String'];
+const allowedObfuscationTypes = ['String', 'LocalDate'];
 const obfuscationConverterTemplate = '<type>Obfuscation';
 
 module.exports = class extends BaseGenerator {

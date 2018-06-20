@@ -69,7 +69,7 @@ module.exports = class extends BaseGenerator {
         const webappDir = jhipsterConstants.CLIENT_MAIN_SRC_DIR;
 
         this.template(`${javaTemplateDir}/config/obfuscation/_StringObfuscation.java`, `${javaDir}config/obfuscation/StringObfuscation.java`);
-        // this.template(`${javaTemplateDir}/config/obfuscation/_LocalDateObfuscation.java`, `${javaDir}config/obfuscation/LocalDateObfuscation.java`);
+        this.template(`${javaTemplateDir}/config/obfuscation/_LocalDateObfuscation.java`, `${javaDir}config/obfuscation/LocalDateObfuscation.java`);
 
         /* // add required third party dependencies
         if (this.buildTool === 'maven') {
