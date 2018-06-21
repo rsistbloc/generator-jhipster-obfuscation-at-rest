@@ -64,7 +64,7 @@ Suppose that *YourEntity* will have two String fields name and code:
 ```bash
 Running post run module hooks
 
-Running JHipster obfuscation-at-rest Generator! v0.2.0
+Running JHipster obfuscation-at-rest Generator! v0.2.1
         Supported types ["String", "LocalDate"]
 
 ? Do you want to enable the obfuscation for this entity(EntityExample)? Yes
