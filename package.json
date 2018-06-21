@@ -1,6 +1,6 @@
 {
   "name": "generator-jhipster-obfuscation-at-rest",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "JHipster module for creating data obfuscation at rest (only JPA support)",
   "keywords": [
     "yeoman-generator",
