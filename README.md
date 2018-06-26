@@ -12,6 +12,9 @@ When secret or sensitive data are stored on a database in clear text unauthorize
 
 *This field obfuscation is applicable only with JPA as persistence layer*
 
+> **PAY ATTENTION**
+> The used algorithms are very simple, if you want to improve the security you could re-implements the converters
+
 # Prerequisites
 
 As this is a [JHipster](http://jhipster.github.io/) module, we expect you have JHipster and its related tools already installed:
@@ -64,8 +67,8 @@ Suppose that *YourEntity* will have two String fields name and code:
 ```bash
 Running post run module hooks
 
-Running JHipster obfuscation-at-rest Generator! v0.2.1
-        Supported types ["String", "LocalDate"]
+Running JHipster obfuscation-at-rest Generator! v0.3.0
+        Supported types ["String", "LocalDate", "Integer"]
 
 ? Do you want to enable the obfuscation for this entity(EntityExample)? Yes
 ? Which fields do you want to obfuscate?
